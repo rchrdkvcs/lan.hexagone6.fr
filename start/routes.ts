@@ -8,5 +8,7 @@
 */
 
 import router from '@adonisjs/core/services/router'
-router.on('/').renderInertia('home')
 
+const TeamsController = () => import('#controllers/teams_controller')
+
+router.get('/teams', [TeamsController, 'render'])
